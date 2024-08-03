@@ -1,0 +1,87 @@
+###############################################################################
+# kubectl delete deployment antd-neo-st && kubectl apply -f /Users/gleam/Projects/antd.neo.st/deployment.yml
+# kubectl apply -f /Users/gleam/Projects/antd.neo.st/deployment.yml
+# kubectl rollout restart deployment antd-neo-st
+###############################################################################
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: antd-neo-st
+spec:
+  selector:
+    matchLabels:
+      app: antd-neo-st
+  replicas: 1
+  revisionHistoryLimit: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: antd-neo-st
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: antd-neo-st
+        image: gleam73/antd-neo-st:latest
+        imagePullPolicy: Always
+        #imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 250m
+            memory: 64Mi
+          limits:
+            cpu: 250m
+            memory: 64Mi
+      imagePullSecrets: ## 참조할 secret name
+      - name: secrets-hub-docker-com-gleam73
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-antd-neo-st
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: antd-neo-st
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: antd-neo-st
+  namespace: default
+  annotations:
+    acme.cert-manager.io/http01-ingress-class: nginx
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/session-cookie-name: "route"
+    nginx.ingress.kubernetes.io/session-cookie-hash: "sha1"
+    nginx.ingress.kubernetes.io/enable-access-log: "true"
+    nginx.ingress.kubernetes.io/ingress-class: nginx
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: antd.neo.st
+    http:
+      paths:
+      - backend:
+          service:
+            name: svc-antd-neo-st
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - antd.neo.st
+    secretName: cloudflare-origin-server-neo-st

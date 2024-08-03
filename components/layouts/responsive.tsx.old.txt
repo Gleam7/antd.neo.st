@@ -1,0 +1,161 @@
+'use client';
+
+import React from 'react';
+import Image from 'next/image';
+
+import { UploadOutlined, LaptopOutlined, UserOutlined, VideoCameraOutlined, NotificationOutlined } from '@ant-design/icons';
+import { Layout, Menu, theme, Breadcrumb, Space } from 'antd';
+import type { MenuProps } from 'antd';
+
+const { Header, Content, Footer, Sider } = Layout;
+
+const items: MenuProps['items'] = ['1', '2', '3', '4', '5'].map((key) => ({
+	key,
+	label: `Main menu ${key}`,
+}));
+
+const items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, index) => {
+	const key = String(index + 1);
+
+	return {
+		key: `sub${key}`,
+		icon: React.createElement(icon),
+		label: `subnav ${key}`,
+
+		children: new Array(4).fill(null).map((_, j) => {
+			const subKey = index * 4 + j + 1;
+			return {
+				key: subKey,
+				label: `option${subKey}`,
+			};
+		}),
+	};
+});
+
+const layoutStyle = {
+	backgroundColor: '#ddd',
+	//borderRadius: 8,
+	//overflow: 'hidden',
+	//width: 'calc(50% - 8px)',
+	//maxWidth: 'calc(50% - 8px)',
+};
+const headerStyle: React.CSSProperties = {
+	position: 'sticky',
+	top: 0,
+	zIndex: 1,
+	width: '100%',
+	display: 'flex',
+	alignItems: 'center',
+	color: '#fff',
+};
+
+const siderStyle: React.CSSProperties = {
+	left: 0,
+	zIndex: 1,
+	overflow: 'auto',
+	height: 'calc(100vh - 95px)',
+	position: 'fixed',
+	insetInlineStart: 0,
+	top: 64,
+	//bottom: 0,
+	scrollbarWidth: 'thin',
+	scrollbarColor: 'unset',
+	//background: colorBgContainer,
+};
+const footerStyle: React.CSSProperties = {
+	position: 'sticky',
+	bottom: '0',
+	zIndex: 1,
+	textAlign: 'center',
+	color: '#fff',
+	backgroundColor: '#ddd',
+	padding: '.3rem 1rem',
+};
+
+const ResponsiveLayout: React.FC = () => {
+	const {
+		token: { colorBgContainer },
+	} = theme.useToken();
+
+	const contentStyle: React.CSSProperties = {
+		textAlign: 'center',
+		minHeight: 153,
+		lineHeight: '120px',
+		margin: '1em',
+		color: '#000',
+		borderRadius: '1em',
+		backgroundColor: colorBgContainer,
+	};
+
+	return (
+		<Layout style={layoutStyle}>
+			<Header style={headerStyle}>
+				<div
+					style={{
+						minWidth: 200,
+						height: '100%',
+						overflow: 'hidden',
+					}}
+				>
+					<Image
+						src="https://placehold.co/153x50/333/eee@3x.png?text=Logo"
+						alt="Site Logo"
+						className="dark:invert"
+						style={{
+							display: 'inline-block',
+							marginRight: '1rem',
+							borderRadius: '0.5rem',
+						}}
+						width={153}
+						height={50}
+						priority
+					/>
+					Header
+				</div>
+				<Menu
+					theme="dark"
+					mode="horizontal"
+					defaultSelectedKeys={['2']}
+					items={items}
+					style={{ flex: 1, minWidth: 0, justifyContent: 'flex-end' }}
+				/>
+			</Header>
+			<Layout style={layoutStyle}>
+				<Sider width="253" breakpoint="md" collapsedWidth="0" style={siderStyle}>
+					<Menu
+						theme="dark"
+						mode="inline"
+						defaultSelectedKeys={['2']}
+						items={items2}
+						style={{ flex: 1, minWidth: 0, justifyContent: 'flex-end' }}
+					/>
+					Sider
+					{
+						// indicates very long content
+						Array.from({ length: 100 }, (_, index) => (
+							<React.Fragment key={index}>
+								{index}
+								<br />
+							</React.Fragment>
+						))
+					}
+				</Sider>
+				<Content style={contentStyle}>
+					Content
+					{
+						// indicates very long content
+						Array.from({ length: 100 }, (_, index) => (
+							<React.Fragment key={index}>
+								{index % 20 === 0 && index ? 'more' : '...'}
+								<br />
+							</React.Fragment>
+						))
+					}
+				</Content>
+			</Layout>
+			<Footer style={footerStyle}>roll-expense.com © 2024</Footer>
+		</Layout>
+	);
+};
+
+export default ResponsiveLayout;

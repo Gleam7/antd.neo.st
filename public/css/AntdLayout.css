@@ -1,0 +1,176 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+	margin-top: 1.5em;
+}
+/*
+.ant-layout {
+	max-height: calc(100vh);
+}
+.ant-layout .ant-layout-header {
+	padding: 0;
+}
+.ant-layout .ant-layout-header .logo {
+	float: left;
+	width: 153px;
+	height: 36px;
+	margin: 14px;
+	background: url('/img/logo.png') no-repeat;
+	background-size: cover;
+}
+.ant-layout .ant-layout-header .logo span {
+	display: none;
+}
+.ant-layout .ant-layout-header .ant-row-rtl .logo {
+	float: right;
+	margin: 16px 0 16px 24px;
+}
+.ant-layout .ant-layout-sider {
+	height: calc(100vh - 64px);
+	max-height: calc(100vh - 64px);
+	overflow-y: auto;
+}
+.ant-layout .ant-layout.site-content {
+	height: calc(100vh - 64px);
+	max-height: calc(100vh - 64px);
+	background: #fff;
+}
+.ant-layout .ant-layout .ant-breadcrumb {
+	padding: 0.5em 1em;
+	background-color: rgb(240, 242, 245);
+}
+.ant-layout .ant-layout .page-content {
+	overflow-y: auto;
+	padding: 1em;
+	background: #fff;
+	height: 100%;
+}
+.ant-layout .ant-layout-footer {
+	text-align: center;
+}
+
+.ant-back-top {
+	right: 30px;
+	bottom: 90px;
+}
+
+.ant-upload-drag {
+	height: 153px !important;
+}
+
+.ant-tabs-top > .ant-tabs-nav,
+.ant-tabs-bottom > .ant-tabs-nav,
+.ant-tabs-top > div > .ant-tabs-nav,
+.ant-tabs-bottom > div > .ant-tabs-nav {
+	margin: 0;
+}
+.ant-tabs-content-holder {
+	border: 1px solid rgb(240, 240, 240);
+	border-top: 0;
+	padding: 1em;
+}
+
+.ant-menu .ant-menu-submenu .ant-menu-item .ant-menu-item {
+	padding-left: 2em !important;
+}
+
+.ant-list-item.BtnCollapse {
+	padding: 0;
+	margin: 0 1em 0 0;
+}
+
+.ant-table-wrapper {
+	margin: 1em 0 0 0;
+}
+.ant-table.ant-table-small .ant-table-title,
+.ant-table.ant-table-small .ant-table-footer,
+.ant-table.ant-table-small .ant-table-thead > tr > th,
+.ant-table.ant-table-small tfoot > tr > th,
+.ant-table.ant-table-small tfoot > tr > td {
+	padding: 0.5em;
+}
+.ant-table.ant-table-small .ant-table-tbody > tr > td {
+	padding: 0.1em;
+}
+th.ant-table-cell {
+	text-align: center !important;
+}
+
+.ant-form-small .ant-form-item {
+	margin: 0 0 0.5em 0;
+}
+
+.search_options {
+	margin: 0 0 3em 0;
+	padding: 1em;
+	border: solid 1px #ccc;
+}
+.search_options .search_options_buttons {
+	text-align: right;
+}
+.search_options .search_options_buttons .ant-btn {
+	margin: 0 0 0 0.5em;
+}
+
+.custom-tooltip {
+	background-color: rgba(255, 255, 255, 0.9);
+	border: solid 1px rgba(0, 0, 0, 0.7);
+	padding: 0.3em;
+}
+.custom-tooltip p {
+	margin: 0;
+}
+
+.LoadingPageSpin {
+	margin-top: 20vh;
+	font-size: 5rem;
+}
+.LoadingPageSpin .ant-spin-dot {
+	width: 17rem;
+	height: 17rem;
+}
+.LoadingPageSpin .ant-spin-dot .ant-spin-dot-item {
+	width: 7rem;
+	height: 7rem;
+}
+
+.GridDemo .ant-row {
+	margin-bottom: 3em;
+}
+.GridDemo .ant-row .ant-col {
+	height: 7em;
+	border-radius: 0.5em;
+	color: #fff;
+	text-align: center;
+	font-weight: 700;
+	vertical-align: middle;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.GridDemo .ant-row > div:not(.gutter-row) {
+	padding: 16px 0;
+	background: #0092ff;
+}
+.GridDemo .ant-row > div:not(.gutter-row):nth-child(2n + 1) {
+	background: rgba(0, 146, 255, 0.75);
+}
+*/
+.GridDemo .ant-row .ant-col {
+	color: #fff;
+}
+.GridDemo .ant-row > div:not(.gutter-row) > div {
+	text-align: center;
+	vertical-align: middle;
+	line-height: 3rem;
+	border-radius: 0.5rem;
+	background: #0092ff;
+}
+.GridDemo .ant-row > div:not(.gutter-row):nth-child(2n + 1) > div {
+	border-radius: 0.5rem;
+	background: rgba(0, 146, 255, 0.75);
+}

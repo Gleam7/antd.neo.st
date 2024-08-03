@@ -1,0 +1,35 @@
+.Layout {
+	background-color: var(--background-nav-bar);
+}
+.Header {
+	display: flex;
+	background-color: var(--background-nav-bar);
+}
+
+.ContentWrapper {
+	margin: 0.3rem;
+	padding: 0.3rem;
+	border-radius: 0.5rem;
+	height: 100%;
+	overflow: none;
+	scrollbar-width: thin;
+	scrollbar-color: unset;
+	background-color: #fff;
+}
+.Breadcrumb {
+	margin: 0 1rem;
+}
+
+.Sider {
+	overflow: hide;
+	overflow-x: auto;
+	height: calc(100vh - 6rem);
+	scrollbar-width: thin;
+	scrollbar-color: unset;
+	background-color: var(--background-nav-bar);
+}
+.Footer {
+	padding: 0.3rem 1rem;
+	color: #fff;
+	background-color: var(--background-nav-bar);
+}

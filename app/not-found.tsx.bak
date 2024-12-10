@@ -1,0 +1,22 @@
+import Link from 'next/link';
+import { headers } from 'next/headers';
+
+export default async function NotFound() {
+	const headerList = await headers();
+	const domain = headerList.get('host');
+	const schema = headerList.get('x-forwarded-proto');
+	const path = headerList.get('x-current-path');
+
+	const full_url = `${schema}://${domain}${path}`;
+
+	//const data = await getSiteData(domain);
+	return (
+		<div>
+			<h2>Not Found: {full_url}</h2>
+			<p>Could not find requested resource</p>
+			<p>
+				<Link href="/">Go to index page</Link>
+			</p>
+		</div>
+	);
+}

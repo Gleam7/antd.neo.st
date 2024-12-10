@@ -1,12 +1,13 @@
-import type { Metadata } from 'next';
-//import { Inter } from 'next/font/google';
-import './globals.css';
+import React from 'react';
 
-//const inter = Inter({ subsets: ['latin'] });
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	title: 'antd.neo.st',
-	description: 'This is Ant design examples page using Next.js + Tailwind CSS + Ant Design. You can see the live demo at https://antd.neo.st',
+	title: {
+		template: '%s | Ant Design Template',
+		default: 'Ant Design Template', // a default is required when creating a template
+	},
+	description: 'Design template Nextjs with ant design',
 };
 
 export default function RootLayout({
@@ -15,8 +16,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			{/*<body className={inter.className}>{children}</body>*/}
+		<html lang="en" suppressHydrationWarning>
 			<body>{children}</body>
 		</html>
 	);

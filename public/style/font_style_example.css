@@ -1,0 +1,34 @@
+.font_style_example {
+    margin: 1rem;
+    max-height: 20rem;
+    font-size: 1.3rem
+}
+
+.font_style_example p.txt {
+    margin-top: 2rem;
+}
+
+.font_style_example p a {
+    margin-right: 2rem;
+    border-right: 1px solid var(--border-color);
+    padding-right: 2rem;
+    color: var(--color-link) !important;
+}
+
+.font_style_example p a:last-child {
+    margin-right: 0;
+    border-right: 0;
+    padding-right: 0;
+}
+
+.font_style_example br {
+    line-height: 2rem;
+}
+
+.font_style_example i {
+    font-style: normal;
+}
+
+.font_style_example i.color-point {
+    color: var(--primary-color)
+}

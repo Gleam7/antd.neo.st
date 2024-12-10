@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-style: normal;
+	font-weight: normal;
+	src: url('/fonts/Jal_Haru.woff') format('woff');
+	/* src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Haru.woff') format('woff'); */
+	font-family: 'Jal_Haru';
+}
+
+@font-face {
+	font-style: normal;
+	font-weight: normal;
+	src: url('/fonts/omyu_pretty.woff2') format('woff2');
+	/*src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');*/
+	font-family: 'omyu_pretty';
+}
+
+@font-face {
+	src: url('/fonts/Moneygraphy-Rounded.woff2') format("woff2"), url('/fonts/Moneygraphy-Rounded.woff') format("woff");
+	/* src: url('https://static.toss.im/assets/homepage/moneygraphy-font/font/Moneygraphy-Rounded.woff2') format("woff2"), url('https://static.toss.im/assets/homepage/moneygraphy-font/font/Moneygraphy-Rounded.woff') format("woff"); */
+	font-family: 'Moneygraphy-Rounded'
+}
+
+:root {
+	--light-foreground: rgba(0, 0, 0, 0.65);
+	--light-background: #ffffff;
+	--light-primary-color: rgb(22, 119, 255);
+	--light-border-color: #e5e7eb;
+	--light-color-link: var(--light-primary-color);
+	--light-scrollbar-bg: rgba(125, 125, 125, 0.5);
+	--light-title-color: rgba(0, 0, 0, 0.65);
+	--light-content-title-bg: rgba(0, 0, 0, 0.03);
+
+	--dark-foreground: rgba(255, 255, 255, 0.65);
+	--dark-background: #000;
+	--dark-primary-color: #1668dc;
+	--dark-border-color: #ffffff1a;
+	--dark-color-link: var(--dark-primary-color);
+	--dark-scrollbar-bg: var(--light-scrollbar-bg);
+	--dark-title-color: rgba(255, 255, 255, 0.7);
+	--dark-content-title-bg: rgba(29, 29, 29, 0.7);
+
+	--foreground: var(--light-foreground);
+	--background: var(--light-background);
+	--primary-color: var(--light-primary-color);
+	--color-link: var(--light-color-link);
+	--border-color: var(--light-border-color);
+	--scrollbar-bg: var(--light-scrollbar-bg);
+	--title-color: var(--light-title-color);
+	--content-title-bg: var(--light-content-title-bg);
+}
+
+:root body.dark {
+	--foreground: var(--dark-foreground);
+	--background: var(--dark-background);
+	--primary-color: var(--dark-primary-color);
+	--color-link: var(--dark-color-link);
+	--border-color: var(--dark-border-color);
+	--scrollbar-bg: var(--dark-scrollbar-bg);
+	--title-color: var(--dark-title-color);
+	--content-title-bg: var(--dark-content-title-bg);
+}
+
+/*****************************************************************************/
+body {
+	margin: 0;
+	background: var(--background) !important;
+	padding: 0;
+	color: var(--foreground) !important;
+}
+
+/*****************************************************************************/
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+	display: block;
+	width: .35rem;
+	height: .35rem;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-button {
+	display: none;
+	background-color: var(--scrollbar-bg);
+}
+
+:active::-webkit-scrollbar-thumb,
+:focus::-webkit-scrollbar-thumb,
+:hover::-webkit-scrollbar-thumb {
+	visibility: visible;
+}
+
+::-webkit-scrollbar-thumb {
+	visibility: hidden;
+	border-radius: 1rem;
+	background-color: var(--scrollbar-bg);
+}
+
+/***************************************************************************** /
+
+nav a {
+	display: inline-block;
+	margin-left: .5rem;
+	padding: 1.1rem;
+}
+
+nav a:hover,
+nav a:active,
+nav a.active {
+	box-shadow: 0 3px 0 var(--primary-color);
+	color: var(--primary-color);
+
+}
+
+/*****************************************************************************/

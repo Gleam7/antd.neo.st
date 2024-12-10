@@ -1,0 +1,24 @@
+#divCatsSearchResult .ant-list .ant-card {
+    margin: 0 auto;
+    box-shadow: none;
+    border: 0;
+    border-radius: .5rem;
+}
+
+.dark #divCatsSearchResult .ant-list .ant-card {
+    background-color: transparent;
+}
+
+#divCatsSearchResult .ant-list .ant-card .ant-card-body {
+    padding: .3rem 0;
+}
+
+#divCatsSearchResult .ant-image {
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+}
+
+#divCatsSearchResult .ant-image img {
+    border-radius: .5rem;
+    object-fit: cover
+}

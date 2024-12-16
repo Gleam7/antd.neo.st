@@ -150,7 +150,7 @@ export const authOptions: NextAuthOptions = {
 	pages: {
 		signIn: '/signin',
 	},
-	secret: (process.env.NEXTAUTH_SECRET || 'NEXTAUTH_SECRET') as string,
+	secret: (process.env.NEXTAUTH_SECRET || 'ORLQW7eo/GJzmTXS5dm9P5SXd8wOCADeuNgtzW+D1ko=') as string,
 	session: {
 		strategy: 'jwt',
 

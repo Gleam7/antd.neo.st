@@ -22,7 +22,7 @@ export async function middleware(request: NextRequest) {
 	// Get session and extract user role
 	const session = await getToken({
 		req: request,
-		secret: process.env.NEXTAUTH_SECRET,
+		secret: process.env.NEXTAUTH_SECRET || 'NEXTAUTH_SECRET',
 	});
 	//console.log('session: ', session);
 
